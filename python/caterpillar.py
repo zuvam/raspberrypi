@@ -9,7 +9,7 @@ __author__ = 'zuva.munshi@gmail.com'
 
 
 def caterpillar(n):
-    assert isinstance(n, int) and n > 1
+    assert isinstance(n, int) and n > 0
     c = [n]
     while n > 1:
         if (n % 2 == 0):
