@@ -8,7 +8,7 @@ __author__ = 'zuva.munshi@gmail.com'
 
 
 def fibonacci(n):
-    assert isinstance(n, int) and n > 0
+    assert isinstance(n, int) and n > 1
     fm, fn = 1, 1
     while n > 2: fm, fn, n = fn, fm + fn, n - 1
     return fn
