@@ -2,16 +2,16 @@
 # Fun with Fibonacci numbers
 # Fibonacci Sequence: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
 # F(1) = 1; F(2) = 1
-# F(n) = F(n-1) + F(n-2) , n>2
+# F(n) = F(n-1) + F(n-2) , n > 2
 __package__ = 'raspberrypi'
 __author__ = 'zuva.munshi@gmail.com'
 
 
-def fibonacci(n):
-    assert isinstance(n, int) and n > 0
-    fm, fn = 1, 1
-    while n > 2: fm, fn, n = fn, fm + fn, n - 1
-    return fn
+def fibonacci(x: int) -> int:
+    assert isinstance(x, int) and x > 0
+    a, b = 1, 1
+    while x > 2: a, b, x = b, a + b, x - 1
+    return b
 
 
 if __name__ == '__main__':

@@ -8,15 +8,12 @@ __package__ = 'raspberrypi'
 __author__ = 'zuva.munshi@gmail.com'
 
 
-def caterpillar(n):
-    assert isinstance(n, int) and n > 0
-    nc = [n]
-    while n > 1:
-        if (n % 2 == 0):
-            n = int(n / 2)
-        else:
-            n = n + 1
-        nc.append(n)
+def caterpillar(x: int) -> [int]:
+    assert isinstance(x, int) and x > 0
+    nc = [x]
+    while x > 1:
+        x = int(x / 2) if (x % 2 == 0) else x + 1
+        nc.append(x)
     return nc
 
 
