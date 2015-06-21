@@ -10,14 +10,14 @@ __author__ = 'zuva.munshi@gmail.com'
 
 def caterpillar(n):
     assert isinstance(n, int) and n > 0
-    number_caterpillar = [n]
+    nc = [n]
     while n > 1:
         if (n % 2 == 0):
             n = int(n / 2)
         else:
             n = n + 1
-        number_caterpillar.append(n)
-    return number_caterpillar
+        nc.append(n)
+    return nc
 
 
 if __name__ == '__main__':
