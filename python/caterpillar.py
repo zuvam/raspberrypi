@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 # Fun with number caterpillars
 # Number caterpillar is chain of numbers from n to 1 such that
-# if the number is even the next number is half
-# and if the number is odd the next number is plus one
+# if number is even the next number is half
+# and if number is odd the next number is plus one
+# caterpillar(17) = [17, 18, 9, 10, 5, 6, 3, 4, 2, 1]
 __package__ = 'raspberrypi'
 __author__ = 'zuva.munshi@gmail.com'
 
