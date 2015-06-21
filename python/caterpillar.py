@@ -3,6 +3,7 @@
 # Number caterpillar is chain of numbers from n to 1 such that
 # if the number is even the next number is half
 # and if the number is odd the next number is plus one
+__package__ = 'raspberrypi'
 __author__ = 'zuva.munshi@gmail.com'
 
 
@@ -11,7 +12,7 @@ def caterpillar(n):
     c = [n]
     while n > 1:
         if (n % 2 == 0):
-            n = n / 2
+            n = int(n / 2)
         else:
             n = n + 1
         c.append(n)
