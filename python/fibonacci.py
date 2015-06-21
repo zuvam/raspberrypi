@@ -3,8 +3,11 @@
 # Fibonacci Sequence: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
 # F(1) = 1; F(2) = 1
 # F(n) = F(n-1) + F(n-2) , n>2
+__author__ = 'zuva.munshi@gmail.com'
+
+
 def fibonacci(n):
-    assert n > 0
+    assert isinstance(n, int) and n > 0
     if n < 3:
         return 1
     else:
@@ -20,4 +23,5 @@ if __name__ == '__main__':
         n = int(sys.argv[1])
     except:
         n = 1
-    print(n, fibonacci(n))
+    f = fibonacci(n)
+    print(n, len(str(f)), f)
