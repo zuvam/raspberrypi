@@ -4,22 +4,22 @@
 # F(1) = 1; F(2) = 1
 # F(n) = F(n-1) + F(n-2) , n > 2
 __package__ = 'raspberrypi'
-__author__ = 'zuva.munshi@gmail.com'
+__author__ = 'Zuva Munshi, Pranav Munshi'
 
 
-def fibonacci(x: int) -> int:
+def fibonacci(x: int) -> (int, int):
     assert isinstance(x, int) and x > 0
-    a, b = 1, 1
-    while x > 2: a, b, x = b, a + b, x - 1
-    return b
+    a, b = 0, 1
+    for n in range(1, x + 1):
+        yield n, b
+        a, b = b, a + b
 
 
 if __name__ == '__main__':
     import sys
 
     try:
-        n = int(sys.argv[1])
+        x = int(sys.argv[1])
     except:
-        n = 1
-    f = fibonacci(n)
-    print(n, len(str(f)), f)
+        x = 1
+    for n, f in fibonacci(x): print(n, f)
