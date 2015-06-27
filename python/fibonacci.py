@@ -10,9 +10,9 @@ __author__ = 'Zuva Munshi, Pranav Munshi'
 def fibonacci(x: int) -> [(int, int)]:
     assert isinstance(x, int) and x > 0
     a, b = 0, 1
-    for n in range(1, x + 1):
+    for i in range(1, x + 1):
         a, b = b, a + b
-        yield n, a
+        yield i, a
 
 
 if __name__ == '__main__':
