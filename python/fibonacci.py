@@ -16,7 +16,10 @@ def fibonacci(x: int) -> [(int, int)]:
 
 
 if __name__ == '__main__':
-    import sys
+    import sys, time
 
     x = sys.argv[1] if len(sys.argv) > 1 else input('number: ')
-    for n, f in fibonacci(int(x)): print(n, f)
+    st = time.time()
+    print('Fibonacci numbers from 1 to {0}:'.format(x))
+    for n, f in fibonacci(int(x)): print('F({0:n}) = {1:n}'.format(n, f))
+    print('Calculated in {0:n} seconds'.format(time.time() - st))
