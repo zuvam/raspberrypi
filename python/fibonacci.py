@@ -7,19 +7,16 @@ __package__ = 'raspberrypi'
 __author__ = 'Zuva Munshi, Pranav Munshi'
 
 
-def fibonacci(x: int) -> (int, int):
+def fibonacci(x: int) -> [(int, int)]:
     assert isinstance(x, int) and x > 0
     a, b = 0, 1
     for n in range(1, x + 1):
-        yield n, b
         a, b = b, a + b
+        yield n, a
 
 
 if __name__ == '__main__':
     import sys
 
-    try:
-        x = int(sys.argv[1])
-    except:
-        x = 1
-    for n, f in fibonacci(x): print(n, f)
+    x = sys.argv[1] if len(sys.argv) > 1 else input('number: ')
+    for n, f in fibonacci(int(x)): print(n, f)
