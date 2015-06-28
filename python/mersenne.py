@@ -8,22 +8,27 @@
 # repeat n − 2 times: s = ((s × s) − 2) mod M
 # if s = 0 then M is PRIME else COMPOSITE
 __package__ = 'raspberrypi'
-__author__ = 'zuva.munshi@gmail.com'
+__author__ = 'Zuva Munshi'
 
 
-def mersenne(x: int) -> (int, str):
-    assert isinstance(x, int) and x > 0
-    s, M = 4, 2 ** x - 1
-    while x > 2: s, x = ((s * s) - 2) % M, x - 1
-    return (M, 'prime' if s == 0 or M < 7 else 'composite')
+def mersenne(n: int, primes=False) -> [(int, int)]:
+    assert isinstance(n, int) and n > 0
+    M = 0
+    for i in range(1, n + 1):
+        M = (2 * M) + 1
+        if primes:
+            s = 4 if i > 2 else 0
+            for j in range(0, i - 2): s = ((s * s) - 2) % M
+            if s == 0: yield i, M
+        else:
+            yield i, M
 
 
 if __name__ == '__main__':
-    import sys
+    import sys, time
 
-    try:
-        n = int(sys.argv[1])
-    except:
-        n = 1
-    m, isprime = mersenne(n)
-    print(n, isprime, m)
+    x = sys.argv[1] if len(sys.argv) > 1 else input('number: ')
+    st = time.time()
+    print('Primes in First {0} Mersenne Numbers:'.format(x))
+    for n, M in mersenne(int(x), True): print('M({0}) = {1}'.format(n, M))
+    print('Calculated in {0} seconds'.format(time.time() - st))

@@ -7,10 +7,10 @@ __package__ = 'raspberrypi'
 __author__ = 'Zuva Munshi, Pranav Munshi'
 
 
-def fibonacci(x: int) -> [(int, int)]:
-    assert isinstance(x, int) and x > 0
+def fibonacci(n: int) -> [(int, int)]:
+    assert isinstance(n, int) and n > 0
     a, b = 0, 1
-    for i in range(1, x + 1):
+    for i in range(1, n + 1):
         a, b = b, a + b
         yield i, a
 
@@ -20,6 +20,6 @@ if __name__ == '__main__':
 
     x = sys.argv[1] if len(sys.argv) > 1 else input('number: ')
     st = time.time()
-    print('Fibonacci numbers from 1 to {0}:'.format(x))
-    for n, f in fibonacci(int(x)): print('F({0:n}) = {1:n}'.format(n, f))
-    print('Calculated in {0:n} seconds'.format(time.time() - st))
+    print('First {0} Fibonacci Numbers:'.format(x))
+    for n, f in fibonacci(int(x)): print('F({0}) = {1}'.format(n, f))
+    print('Calculated in {0} seconds'.format(time.time() - st))

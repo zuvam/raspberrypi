@@ -8,21 +8,20 @@ __package__ = 'raspberrypi'
 __author__ = 'zuva.munshi@gmail.com'
 
 
-def caterpillar(x: int) -> [int]:
-    assert isinstance(x, int) and x > 0
-    nc = [x]
-    while x > 1:
-        x = int(x / 2) if (x % 2 == 0) else x + 1
-        nc.append(x)
+def caterpillar(n: int) -> [int]:
+    assert isinstance(n, int) and n > 0
+    nc = [n]
+    while n > 1:
+        n = int(n / 2) if (n % 2 == 0) else n + 1
+        nc.append(n)
     return nc
 
 
 if __name__ == '__main__':
-    import sys
+    import sys, time
 
-    try:
-        n = int(sys.argv[1])
-    except:
-        n = 1
-    c = caterpillar(n)
-    print(n, len(c), c)
+    x = sys.argv[1] if len(sys.argv) > 1 else input('number: ')
+    st = time.time()
+    c = caterpillar(int(x))
+    print('Number: {0}; Caterpillar Length: {1}; Caterpillar: {2}'.format(x, len(c), '->'.join(str(n) for n in c)))
+    print('Calculated in {0} seconds'.format(time.time() - st))
