@@ -4,6 +4,11 @@
     <facet type="Python" name="Python">
       <configuration sdkName="Remote Python 3.2.3 (ssh://pi@zuvasraspi.local:22/usr/bin/python3)" />
     </facet>
+    <facet type="bash" name="BashSupport">
+      <configuration>
+        <operationMode type="IgnoreAll" />
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />

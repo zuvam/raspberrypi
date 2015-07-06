@@ -17,7 +17,7 @@ def caterpillar(n: int) -> [int]:
     return nc
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import sys, time
 
     x = sys.argv[1] if len(sys.argv) > 1 else input('number: ')
